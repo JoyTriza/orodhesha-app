@@ -1,6 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = [{
+    id:1,
+    item:"Sing in the shower",
+    completed: true
+  },
+  {
+    id:2,
+    item:"Clean the compound",
+    completed: false
+  },
+  {
+    id:3,
+    item:"Travel to Japan",
+    completed: false
+  },
+  {
+    id:4,
+    item:"Learn Ruby",
+    completed: true
+  },
+  {
+    id:5,
+    item:"Cleab the car",
+    completed: false
+  }];
+
 
 const addTodoReducer = createSlice({
   name: "todos",
