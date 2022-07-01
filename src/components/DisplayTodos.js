@@ -9,6 +9,7 @@ import {
 import TodoItem from "./TodoItem";
 import { AnimatePresence, motion } from "framer-motion";
 
+
 const mapStateToProps = (state) => {
   return {
     todos: state,
@@ -25,6 +26,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const DisplayTodos = (props) => {
+ 
   const [sort, setSort] = useState("active");
   return (
     <div className="displaytodos">
@@ -41,7 +43,7 @@ const DisplayTodos = (props) => {
           whileTap={{ scale: 0.9 }}
           onClick={() => setSort("completed")}
         >
-          Completed
+          Done
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.1 }}

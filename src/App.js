@@ -1,9 +1,24 @@
 import "./css/main.css";
 import DisplayTodos from "./components/DisplayTodos";
 import Todos from "./components/Todos";
-import Login from "./components/Login.js/Login";
 import { motion } from "framer-motion";
+import { useState,useEffect } from "react";
+// import SignUp from "./components/Login/signup";
+// import Login from "./components/Login/login";
 function App() {
+  // const [login, setLogIn] = useState()
+
+
+  const [todo, setTodo] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4300/todos")
+      .then((r) => r.json())
+      .then((todo) => setTodo(todo));
+  }, []);
+
+
+
   return (
     <div className="App">
       <motion.h1
@@ -19,10 +34,13 @@ function App() {
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 1 }}
       >
-        <Todos />
-        <DisplayTodos />
       </motion.div>
-      <Login />
+        <Todos />
+        <DisplayTodos todos={todo}/>
+
+      {/* <SignUp /> */}
+
+      {/* <Login setLogIn = { setLogIn } /> */}
     </div>
   );
 }
