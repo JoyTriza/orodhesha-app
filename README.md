@@ -15,7 +15,7 @@
 + [Authors Info](#author-Info)
 
 ## Description
-<p>.</p>
+<p>This app is a To-do list that helps you keep track of your  daily activities</p>
 
 ## Installation
 
@@ -29,9 +29,15 @@
 
 [Go Back to the top](#)
 ## Technology Used
-* HTNL - which was used to build the structure of the pages.
+* HTML - which was used to build the structure of the pages.
 
 * CSS - which was used to style the pages incuding the left aside navigation bar
+
+.React 
+
+.Ruby
+
+. Sinatra
 
 ## Reference
 * Materialize CSS
