@@ -22,7 +22,7 @@ const initialState = [{
   },
   {
     id:5,
-    item:"Cleab the car",
+    item:"Clean the car",
     completed: false
   }];
 

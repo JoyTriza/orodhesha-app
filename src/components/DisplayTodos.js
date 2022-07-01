@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import { connect } from "react-redux";
 import {
   addTodos,
@@ -8,7 +8,7 @@ import {
 } from "../redux/reducer";
 import TodoItem from "./TodoItem";
 import { AnimatePresence, motion } from "framer-motion";
-
+import {GrCheckboxSelected, GrCheckbox, GrDatabase}  from "react-icons/gr";
 
 const mapStateToProps = (state) => {
   return {
@@ -26,7 +26,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const DisplayTodos = (props) => {
- 
   const [sort, setSort] = useState("active");
   return (
     <div className="displaytodos">
@@ -36,21 +35,21 @@ const DisplayTodos = (props) => {
           whileTap={{ scale: 0.9 }}
           onClick={() => setSort("active")}
         >
-          Active
+          <GrCheckbox/>
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setSort("completed")}
         >
-          Done
+          <GrCheckboxSelected/>
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setSort("all")}
         >
-          All
+          <GrDatabase/>
         </motion.button>
       </div>
       <ul>
@@ -70,7 +69,7 @@ const DisplayTodos = (props) => {
                 );
               })
             : null}
-
+          {/* for completed items */}
           {props.todos.length > 0 && sort === "completed"
             ? props.todos.map((item) => {
                 return (
@@ -86,7 +85,7 @@ const DisplayTodos = (props) => {
                 );
               })
             : null}
-
+          {/* for all items */}
           {props.todos.length > 0 && sort === "all"
             ? props.todos.map((item) => {
                 return (

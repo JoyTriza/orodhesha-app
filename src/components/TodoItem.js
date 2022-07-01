@@ -1,7 +1,6 @@
-import { motion } from "framer-motion";
+ import { motion } from "framer-motion";
 import React, { useRef } from "react";
-import { AiFillEdit } from "react-icons/ai";
-import { IoCheckmarkDoneSharp, IoClose } from "react-icons/io5";
+import {  VscTrash, VscChecklist, VscBook,VscSmiley } from "react-icons/vsc";
 
 const TodoItem = (props) => {
   const { item, updateTodo, removeTodo, completeTodo } = props;
@@ -15,8 +14,7 @@ const TodoItem = (props) => {
 
   const update = (id, value, e) => {
     if (e.which === 13) {
-
-        updateTodo({ id, item: value });
+      updateTodo({ id, item: value });
       inputRef.current.disabled = true;
     }
   };
@@ -50,7 +48,7 @@ const TodoItem = (props) => {
           onClick={() => changeFocus()}
         >
           {" "}
-          <AiFillEdit />{" "}
+          <VscBook />{" "}
         </motion.button>
         {item.completed === false && (
           <motion.button
@@ -59,9 +57,8 @@ const TodoItem = (props) => {
             style={{ color: "green" }}
             onClick={() => completeTodo(item.id)}
           >
-            <IoCheckmarkDoneSharp />
+            <VscChecklist/>
           </motion.button>
-
         )}
         <motion.button
           whileHover={{ scale: 1.4 }}
@@ -70,10 +67,10 @@ const TodoItem = (props) => {
           onClick={() => removeTodo(item.id)}
         >
           {" "}
-          <IoClose />
+          <VscTrash />
         </motion.button>{" "}
       </div>
-      {item.completed && <span className="completed">done</span>}
+      {item.completed && <span className="completed"><VscSmiley/></span>}
     </motion.li>
   );
 };
