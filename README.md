@@ -1,6 +1,6 @@
  # Orodesha-App
  
- ![Orodesha](./components/tasky.png)
+ ![Orodesha](https://github.com/JoyTriza/orodhesha-app/blob/master/src/components/tasky.png)
 
 ##### By JoyTriza 
 ### It is a description 
